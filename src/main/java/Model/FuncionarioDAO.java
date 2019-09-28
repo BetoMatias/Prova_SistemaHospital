@@ -15,8 +15,10 @@ public class FuncionarioDAO {
 	static {
 		try {
 			// Secretarias
-			FUNCIONARIOS.add(new Funcionario("JoseLogin", "123abc", "Jose", "Secretaria"));
-			FUNCIONARIOS.add(new Funcionario("MartaLogin", "123abc", "Marta", "Secretaria"));
+			FUNCIONARIOS.add(new Funcionario("JoseLogin", "123abc", "Jose", "Secretaria",
+					new Agenda("", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("01/01/2019 00:00"))));
+			FUNCIONARIOS.add(new Funcionario("MartaLogin", "123abc", "Marta", "Secretaria",
+					new Agenda("", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("01/01/2019 00:00"))));
 
 			// Medicos
 			FUNCIONARIOS.add(new Funcionario("Beto", "123", "Beto", "Medico",

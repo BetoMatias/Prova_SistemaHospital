@@ -13,7 +13,7 @@
 	<section class="container">
 		<div class="form-login">
 			<h1 class="title">Hospital São Beto</h1>
-			<form class= "login" action="login" method="GET">
+			<form class= "login" action="login" method="post">
 
 				<label>Login: <input type="text" name="login"
 					placeholder="Informar Usuario" required />
