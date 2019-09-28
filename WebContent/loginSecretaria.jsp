@@ -25,7 +25,7 @@
 					placeholder="Informe o telefone" required />
 				</label>
 				
-				<label>Sintomas: 
+				<label>Sintomas: </br>
 				<textarea name="sintomas" rows="5" cols="30"></textarea>
 				</label>
 				
