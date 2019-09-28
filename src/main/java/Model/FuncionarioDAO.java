@@ -70,5 +70,15 @@ public class FuncionarioDAO {
 		return agenda;
 	}
 	
-
+	public String verificarLogin(String login, String senha) {
+		for(Funcionario f: FUNCIONARIOS) {
+			if(f.getLogin()==login && f.getSenha()==senha) {
+				return f.getTipoFunc();}	
+			}		
+				return "Sem login";
+	}
+		
+	
 }
+
+
