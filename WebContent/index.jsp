@@ -20,6 +20,7 @@
 			<label>Senha: <input type="password" name="senha" placeholder="Informe sua senha" required /> </label>
 			
 			<button>Entrar</button>
+			
 			<a href=/cadastro>Cadastrar</a>
 			
 		</form>
