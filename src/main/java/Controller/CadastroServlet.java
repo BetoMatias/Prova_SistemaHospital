@@ -25,8 +25,10 @@ public class CadastroServlet extends HttpServlet {
 
 		if (req.getParameter("radio") == "Medico") {
 			FUNCIONARIOS.cadastrarMedico(nome, login, senha);
+			System.out.println("Médico(a) adicionado(a).");
 		} else if (req.getParameter("radio") == "Secretaria") {
 			FUNCIONARIOS.cadastrarSecretaria(login, senha, nome);
+			System.out.println("Secretaria(o) adicionada(o).");
 		}
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}

@@ -13,9 +13,9 @@
 	<section class="container">
 		<div class="form-login">
 			<h1 class="title">Hospital São Beto</h1>
-			<form action="login" method="GET">
+			<form class= "login" action="login" method="GET">
 
-				<label>Login <input type="text" name="login"
+				<label>Login: <input type="text" name="login"
 					placeholder="Informar Usuario" required />
 				</label> <label>Senha: <input type="password" name="senha"
 					placeholder="Informe sua senha" required />
