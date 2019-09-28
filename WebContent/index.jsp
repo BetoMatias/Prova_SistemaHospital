@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 <section class="container">
 	<div class="form-login">
 		<h1 class="title">Hospital São Beto</h1>
-		<form action="/login" method="GET">
+		<form action="login" method="GET">
 		
 			<label>Login <input type="text" name="login" placeholder="Informar Usuario" required />	</label>
 			
@@ -21,7 +21,7 @@
 			
 			<button>Entrar</button>
 			
-			<a href=/cadastro>Cadastrar</a>
+			<a href=cadastro.jsp>Cadastrar</a>
 			
 		</form>
 	</div>

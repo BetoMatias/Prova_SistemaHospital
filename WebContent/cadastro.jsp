@@ -9,7 +9,7 @@
 <body>
 
 
-  <form action='index' method='GET'>
+  <form action="cadastrar" method="POST">
 
   <label>Nome:
   <input type="text" name="nome" placeholder="Favor inserir o nome do funcionário" required />

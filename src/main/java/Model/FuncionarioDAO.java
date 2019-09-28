@@ -71,13 +71,13 @@ public class FuncionarioDAO {
 	}
 	
 	public Funcionario verificarLogin(String login, String senha) {
-		Funcionario func = new Funcionario("","","","");
+		Funcionario funcionario = new Funcionario("","","","");
 		
 		for(Funcionario f: FUNCIONARIOS) {
 			if(f.getLogin()==login && f.getSenha()==senha) {
-				func = f;}	
+				funcionario = f;}	
 			}		
-				return func;
+				return funcionario;
 	}
 		
 	
