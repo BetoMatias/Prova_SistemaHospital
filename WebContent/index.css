@@ -1,0 +1,20 @@
+body {
+  background-color: #9dfae6;
+  font-family: Verdana;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.radiobut{
+ display:flex;
+ justify-content: flex-start;
+ align-items:flex-start;	
+ flex-direction: row;
+}

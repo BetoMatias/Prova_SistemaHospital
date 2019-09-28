@@ -14,7 +14,7 @@ public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = -9109311005532043020L;
 
-	FuncionarioDAO FUNCIONARIOS;
+	FuncionarioDAO FUNCIONARIOS = new FuncionarioDAO();
 
 	String login = "";
 	String senha = "";
@@ -25,11 +25,11 @@ public class LoginServlet extends HttpServlet {
 		senha = req.getParameter("senha");
 
 		if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Medico") {
-			req.getRequestDispatcher("/loginMedico.jsp").forward(req, resp);
+			resp.sendRedirect("loginMedico.jsp");
 		} else if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Secretaria") {
-			req.getRequestDispatcher("/loginSecretaria.jsp").forward(req, resp);
+			resp.sendRedirect("loginSecretaria.jsp");
 		} else {
-			System.out.println("Login invalido");
+			resp.sendRedirect("invalido.jsp");
 		}
 	}
 }
