@@ -1,9 +1,10 @@
 body {
-  background-color: #dffdf7;
+  background-color: #cddbfc;
   font-family: Verdana;
   margin: 0;
   padding: 0;
 }
+
 
 .container {
   display: flex;
@@ -50,7 +51,7 @@ body {
 button {
   background-color: #9fcbff;
   border: 0;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #161616;
   cursor: pointer;
   padding: 18px 32px;
