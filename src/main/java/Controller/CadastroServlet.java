@@ -28,6 +28,6 @@ public class CadastroServlet extends HttpServlet {
 		} else if (req.getParameter("radio") == "Secretaria") {
 			FUNCIONARIOS.cadastrarSecretaria(login, senha, nome);
 		}
-
+		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 }

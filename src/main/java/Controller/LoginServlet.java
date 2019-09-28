@@ -1,8 +1,6 @@
 package Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,20 +12,22 @@ import Model.FuncionarioDAO;
 @WebServlet(urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
 
+	private static final long serialVersionUID = -9109311005532043020L;
+
 	FuncionarioDAO FUNCIONARIOS;
 
 	String login = "";
 	String senha = "";
 
-	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		login = req.getParameter("login");
 		senha = req.getParameter("senha");
 
-		if (FUNCIONARIOS.verificarLogin(login, senha) == "Medico") {
-			// mandar para jsp loginMedico
-		} else if (FUNCIONARIOS.verificarLogin(login, senha) == "Secretaria") {
-			// mandar para jsp loginMedico
+		if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Medico") {
+			req.getRequestDispatcher("/loginMedico.jsp").forward(req, resp);
+		} else if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Secretaria") {
+			req.getRequestDispatcher("/loginSecretaria.jsp").forward(req, resp);
 		} else {
 			System.out.println("Login invalido");
 		}

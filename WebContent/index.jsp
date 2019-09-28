@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
 <section class="container">
 	<div class="form-login">
 		<h1 class="title">Hospital São Beto</h1>
-		<form action="controller" method="post">
+		<form action="/login" method="GET">
 		
 			<label>Login <input type="text" name="login" placeholder="Informar Usuario" required />	</label>
 			

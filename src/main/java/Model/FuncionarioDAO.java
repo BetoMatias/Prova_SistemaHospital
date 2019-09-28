@@ -70,12 +70,14 @@ public class FuncionarioDAO {
 		return agenda;
 	}
 	
-	public String verificarLogin(String login, String senha) {
+	public Funcionario verificarLogin(String login, String senha) {
+		Funcionario func = new Funcionario("","","","");
+		
 		for(Funcionario f: FUNCIONARIOS) {
 			if(f.getLogin()==login && f.getSenha()==senha) {
-				return f.getTipoFunc();}	
+				func = f;}	
 			}		
-				return "Sem login";
+				return func;
 	}
 		
 	

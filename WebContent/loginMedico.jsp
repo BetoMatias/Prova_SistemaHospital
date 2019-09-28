@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="loginMedico.css">
+<link rel="stylesheet" type="text/css" href="css/loginMedico.css">
 </head>
 <body>
 
