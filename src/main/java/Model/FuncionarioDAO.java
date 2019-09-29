@@ -57,11 +57,15 @@ public class FuncionarioDAO {
 	}
 
 	public void removerConsulta(String loginMedico, String paciente) {
+		System.out.println(paciente);
 		for (Funcionario f : FUNCIONARIOS)
 			if (f.getLogin().equals(loginMedico)) {
-				int i = f.paciente.indexOf(paciente);
+				System.out.println(paciente = "dentro do for");
+				int i = f.paciente.indexOf(paciente);				
+				if(f.paciente.get(i) != null && f.horario.get(i) != null) {
 				f.paciente.remove(i);
 				f.horario.remove(i);
+				}
 			}
 		
 	}
@@ -120,10 +124,7 @@ public class FuncionarioDAO {
 
 	public Funcionario verificarLogin(String login, String senha) {
 		Funcionario funcionario = null;
-		System.out.println(senha + login);
 		for (Funcionario f : FUNCIONARIOS) {
-			System.out.println("Login enviado :" + login + " Login foreach " + f.getLogin());
-			System.out.println("Senha enviado :" + senha + " Senha foreach " + f.getSenha());
 			String logins = f.getLogin();
 			String senhas = f.getSenha();
 

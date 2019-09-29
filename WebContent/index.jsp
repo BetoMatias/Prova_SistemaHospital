@@ -15,7 +15,7 @@
 			<h1 class="title">Hospital São Beto</h1>
 			<form class= "login" action="login" method="post">
 
-				<label>Login : <input type="text" name="login"
+				<label>Login: <input type="text" name="login"
 					placeholder="Informar Usuario" required />
 				</label> <label>Senha: <input type="password" name="senha"
 					placeholder="Informe sua senha" required />
