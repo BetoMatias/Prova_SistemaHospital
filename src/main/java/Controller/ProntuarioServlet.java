@@ -22,7 +22,6 @@ public class ProntuarioServlet extends HttpServlet {
 		FuncionarioDAO dao = new FuncionarioDAO();
 		
 		String horario = req.getParameter("horario");
-		
 		String[] prontuario = horario.split(" - ");
 		
 	

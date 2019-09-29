@@ -12,20 +12,20 @@ public class FuncionarioDAO {
 	static {
 		try {
 			// Secretarias
-			FUNCIONARIOS.add(new Funcionario("Jose", "Jose", "123", "Secretaria", "", ""));
-			FUNCIONARIOS.add(new Funcionario("Marta", "Marta", "123", "Secretaria", "", ""));
+			FUNCIONARIOS.add(new Funcionario("Jose", "123", "Secretaria", "", ""));
+			FUNCIONARIOS.add(new Funcionario("Marta", "123", "Secretaria", "", ""));
 
 			// Medicos
-			FUNCIONARIOS.add(new Funcionario("Beto" /* nome */, "BetoL"/* login */, "123"/* senha */,
+			FUNCIONARIOS.add(new Funcionario("Beto"/* login */, "123"/* senha */,
 					"Medico"/* função */, "Testson"/* paciente */, "30/09/2019 13:20"/* agenda */));
 			
-			Funcionario barabara = new Funcionario("Barbara", "Barbara", "123", "Medico", "Testson", "30/09/2019 13:20");
+			Funcionario barabara = new Funcionario("Barbara", "123", "Medico", "Testson", "30/09/2019 13:20");
 			barabara.setPaciente("Thiago");
 			barabara.setHorario("30/09/2019 11:20");
 			FUNCIONARIOS.add(barabara);
 			
-			FUNCIONARIOS.add(new Funcionario("Maria", "Maria", "123", "Medico", "Pedrinho", "30/09/2019 10:20"));
-			FUNCIONARIOS.add(new Funcionario("Paulo", "Paulo", "123", "Medico", "Mariazinha", "29/09/2019 07:20"));
+			FUNCIONARIOS.add(new Funcionario("Maria", "123", "Medico", "Pedrinho", "30/09/2019 10:20"));
+			FUNCIONARIOS.add(new Funcionario("Paulo", "123", "Medico", "Mariazinha", "29/09/2019 07:20"));
 
 			// Pacientes
 			PACIENTES.add(new Paciente("Pedrinho" /* nome */, "1234-1234"/* telefone */, "Dor de cabeça"/* Sintoma */,
@@ -38,15 +38,14 @@ public class FuncionarioDAO {
 		}
 	}
 
-	public void cadastrarSecretaria(String nome, String login, String senha) {
-		System.out.println(login + "Oi eu sou um login \n" + senha + "Oi eu sou uma senha \n" + nome);
-		FUNCIONARIOS.add(new Funcionario(nome, login, senha, "Secretaria"));
+	public void cadastrarSecretaria(String login, String senha) {
+		FUNCIONARIOS.add(new Funcionario(login, senha, "Secretaria"));
 
 	}
 
-	public void cadastrarMedico(String nome, String login, String senha) {
-		System.out.println(login + senha + nome);
-		FUNCIONARIOS.add(new Funcionario(nome, login, senha, "Medico"));
+	public void cadastrarMedico(String login, String senha) {
+		System.out.println(login + senha);
+		FUNCIONARIOS.add(new Funcionario(login, senha, "Medico"));
 
 	}
 
@@ -57,16 +56,17 @@ public class FuncionarioDAO {
 	}
 
 	public void removerConsulta(String loginMedico, String paciente) {
-		System.out.println(paciente);
+		System.out.println(loginMedico + " " + paciente );
+
+		if(!paciente.equals("Sem")) {
 		for (Funcionario f : FUNCIONARIOS)
 			if (f.getLogin().equals(loginMedico)) {
-				System.out.println(paciente = "dentro do for");
-				int i = f.paciente.indexOf(paciente);				
-				if(f.paciente.get(i) != null && f.horario.get(i) != null) {
+				int i = f.paciente.indexOf(paciente);	
+				System.out.println("entrou no if" + " e o index é "+ i );
 				f.paciente.remove(i);
-				f.horario.remove(i);
-				}
+				f.horario.remove(i);			
 			}
+		}
 		
 	}
 	
@@ -135,7 +135,7 @@ public class FuncionarioDAO {
 			}
 		}
 		if (funcionario == null) {
-			funcionario = new Funcionario("1", "1", "1", "1", "1", "1");
+			funcionario = new Funcionario("1", "1", "1", "1", "1");
 		}
 		return funcionario;
 	}

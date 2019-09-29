@@ -21,12 +21,11 @@ public class DeletarConsultaServlet extends HttpServlet {
 		FuncionarioDAO dao = new FuncionarioDAO();
 		
 		String horario = req.getParameter("horario");
+		String[] agenda = horario.split(" - ");
 		
-		String[] nomePaciente = horario.split(" - ");
+		String nomeMedico = req.getParameter("medico");
 		
-		String loginMedico = req.getParameter("medico");
-		
-		dao.removerConsulta(loginMedico, nomePaciente[0]);
+		dao.removerConsulta(nomeMedico, agenda[0]);
 				
 		req.getRequestDispatcher("/login").forward(req, resp);
 		

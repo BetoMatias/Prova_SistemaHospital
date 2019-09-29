@@ -22,4 +22,5 @@
 	<button><br>Enviar/Atualizar<br></button>
 	</form>
 </body>
+<a href=/HospitalP1/logout>Deslogar</a>	
 </html>

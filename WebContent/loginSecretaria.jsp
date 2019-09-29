@@ -11,6 +11,7 @@
 </head>
 <body>
 <h1 class="titulopagina">Bem vindo(a)${secretaria}</h1>
+<a href=/HospitalP1/logout>Deslogar</a>	
 <section class="container">
 
 	<section class="paciente">
@@ -46,12 +47,10 @@
 						<label>Paciente: <input type="text" name="paciente"
 						placeholder="Informar Paciente" required />
 						</label> 
-						<label>Data: <input class="agenda" type="datetime-local" name="agenda"
-					required />
+						<label>Data: <input class="agenda" type="datetime-local" name="agenda"  min="2019-10-01" required />
 						</label>
 										
-				<button>Agendar</button>
-				
+				<button>Agendar</button>			
 			</form>
 		</div>
 	</section>	

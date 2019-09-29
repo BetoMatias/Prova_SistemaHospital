@@ -14,6 +14,7 @@
 <body>
 
 	<h1>Consultas agendadas para ${medico}</h1>
+	<a href=/HospitalP1/logout>Deslogar</a>	
 	<section class="horarioLista">
 		<table class="tabelaAgenda" style="border: 1px solid black">
 			<thead>
@@ -28,7 +29,7 @@
 					<tr>
 						<td class="listaConsulta"><c:out value="${horario}" /></td>
 						<td class="prontuariocss"><a href=/HospitalP1/prontuarios?horario=<c:out value="${horario}"/>>Prontuario</a></td>
-						<td class="deletarcss"><a href=/HospitalP1/deletar>Dar baixa.</a></td>
+						<td class="deletarcss"><a href=/HospitalP1/deletar?medico=${medico}&horario=<c:out value="${horario}"/>>Dar baixa.</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

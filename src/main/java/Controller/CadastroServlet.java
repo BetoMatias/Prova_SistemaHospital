@@ -29,11 +29,11 @@ public class CadastroServlet extends HttpServlet {
 		
 		if (req.getParameter("tipoFunc").contentEquals("Medico")) {
 			
-			FUNCIONARIOS.cadastrarMedico(nome, login, senha);
+			FUNCIONARIOS.cadastrarMedico(login, senha);
 			System.out.println("Médico(a) adicionado(a).");
 		}
 		else if (req.getParameter("tipoFunc").equals("Secretaria")) {
-			FUNCIONARIOS.cadastrarSecretaria(nome, login, senha);
+			FUNCIONARIOS.cadastrarSecretaria(login, senha);
 			
 			
 			System.out.println("Secretaria(o) adicionada(o).");

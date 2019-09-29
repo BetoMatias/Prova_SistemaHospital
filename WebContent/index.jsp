@@ -17,7 +17,8 @@
 
 				<label>Login: <input type="text" name="login"
 					placeholder="Informar Usuario" required />
-				</label> <label>Senha: <input type="password" name="senha"
+				</label> 
+				<label>Senha: <input type="password" name="senha"
 					placeholder="Informe sua senha" required />
 				</label>
 

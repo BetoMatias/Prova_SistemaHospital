@@ -14,8 +14,6 @@
 	<h1 class="title">Cadastro</h1>
 	<form class="cadastro" action="cadastrar" method="POST">
 
-		<label>Nome : <input type="text" name="nome"
-			placeholder="Digite o nome" required />
 		</label> <label>Login: <input type="text" name='login'
 			placeholder="Digite um login" required />
 		</label> <label>Senha: <input type='password' name='senha'
@@ -29,7 +27,5 @@
 		<button>Cadastrar</button>
 	</form>
 </section>
-
-
 </body>
 </html>
