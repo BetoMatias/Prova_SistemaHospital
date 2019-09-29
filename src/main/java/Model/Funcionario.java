@@ -34,8 +34,7 @@ public class Funcionario {
 		this.senha = senha;
 	}
 	
-	public void setPaciente(String nome) {
-		
+	public void setPaciente(String nome) {	
 	paciente.add(nome);
 	}
 	

@@ -18,7 +18,12 @@ public class FuncionarioDAO {
 			// Medicos
 			FUNCIONARIOS.add(new Funcionario("Beto" /* nome */, "BetoL"/* login */, "123"/* senha */,
 					"Medico"/* função */, "Testson"/* paciente */, "30/09/2019 13:20"/* agenda */));
-			FUNCIONARIOS.add(new Funcionario("Barbara", "Barbara", "123", "Medico", "Testson", "30/09/2019 13:20"));
+			
+			Funcionario barabara = new Funcionario("Barbara", "Barbara", "123", "Medico", "Testson", "30/09/2019 13:20");
+			barabara.setPaciente("Thiago");
+			barabara.setHorario("30/09/2019 11:20");
+			FUNCIONARIOS.add(barabara);
+			
 			FUNCIONARIOS.add(new Funcionario("Maria", "Maria", "123", "Medico", "Pedrinho", "30/09/2019 10:20"));
 			FUNCIONARIOS.add(new Funcionario("Paulo", "Paulo", "123", "Medico", "Mariazinha", "29/09/2019 07:20"));
 
@@ -26,7 +31,8 @@ public class FuncionarioDAO {
 			PACIENTES.add(new Paciente("Pedrinho" /* nome */, "1234-1234"/* telefone */, "Dor de cabeça"/* Sintoma */,
 					""/* Prontuario */));
 			PACIENTES.add(new Paciente("Mariazinha", "1234-4321", "Braço com formigamento", ""));
-
+			PACIENTES.add(new Paciente("Testson", "1234-4321", "em teste", ""));
+			PACIENTES.add(new Paciente("Thiago", "1234-4321", "Dor no peito, mas bem", "teste"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -79,6 +85,15 @@ public class FuncionarioDAO {
 			}
 		return agendamento;
 	}
+	
+	public Paciente consultarPaciente(String nomePaciente) {
+		for(Paciente p : PACIENTES) {
+			if(p.getNome().equals(nomePaciente)) {
+				return p;
+			}
+		}	
+		return null;
+	}
 
 	public ArrayList<String> consultarHorarios(String nomeMedico) {
 
@@ -87,7 +102,9 @@ public class FuncionarioDAO {
 		for (Funcionario f : FUNCIONARIOS)
 			if (f.getLogin().equals(nomeMedico)) {
 				if (f.horario != null && f.horario.size() > 0) {
-					agendamento = f.horario;
+					for(int i = 0; i < f.paciente.size(); i++) {
+						  agendamento.add(f.paciente.get(i) + " - " + f.horario.get(i));
+						}
 				}else {
 					agendamento.add("Sem consultas.");
 				}

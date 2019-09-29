@@ -17,38 +17,26 @@
 <body>
 
 	<h1>Consultas agendadas para ${medico}</h1>
-	<section class="pacientesLista">
-		<table style="border: 1px solid black">
-			<thead>
-				<tr>
-					<th>Nome</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="nomePaciente" items="${pacientes}">
-					<tr>
-						<td><c:out value="${nomePaciente}" /></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-	</section>
 	<section class="horarioLista">
 		<table style="border: 1px solid black">
 			<thead>
 				<tr>
-					<th>Horário</th>
+					<th>Consultas</th>
+					<th>Prontuarios</th>
+					<th>Remover</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="horario" items="${horarios}">
 					<tr>
 						<td><c:out value="${horario}" /></td>
+						<td class="prontuariocss"><a href=/HospitalP1/prontuarios?horario=<c:out value="${horario}"/>>Prontuario</a></td>
+						<td class="deletarcss"><a href=/deletar>Dar baixa.</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</section>
-
+<a href=index.jsp>Voltar</a>	
 </body>
 </html>
