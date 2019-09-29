@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Model.Funcionario;
 import Model.FuncionarioDAO;
 
 @WebServlet(urlPatterns = { "/login" })
@@ -25,14 +26,15 @@ public class LoginServlet extends HttpServlet {
 		
 		login = req.getParameter("login");
 		senha = req.getParameter("senha");
-
+		Funcionario funcio = FUNCIONARIOS.verificarLogin(login, senha);
 		
 		
-		if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Medico") {
+		if (funcio.getTipoFunc() == "Medico") {
 			HttpSession session = req.getSession();
 			session.setAttribute("medico", login);
 			resp.sendRedirect("loginMedico.jsp");
-		} else if (FUNCIONARIOS.verificarLogin(login, senha).getTipoFunc() == "Secretaria") {
+		}
+		else if (funcio.getTipoFunc() == "Secretaria") {
 			HttpSession session = req.getSession();
 			session.setAttribute("secretaria", login);
 			resp.sendRedirect("loginSecretaria.jsp");

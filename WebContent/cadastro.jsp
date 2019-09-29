@@ -20,9 +20,11 @@
 			placeholder="Digite um login" required />
 		</label> <label>Senha: <input type='password' name='senha'
 			placeholder='Digite a senha.' required />
-		</label> <input type='radio' class="radiobut" name='tipoFunc' value='Medico'> Medico<br>
-		<input type='radio'class="radiobut" name='tipoFunc' value='Secretaria'>
-		Secretaria <br>
+		</label> 
+		
+		
+		<input type='radio' class="radiobut" name='tipoFunc' value='Medico'> Medico<br>
+		<input type='radio'class="radiobut" name='tipoFunc' value='Secretaria'>	Secretaria <br>
 
 		<button>Cadastrar</button>
 	</form>

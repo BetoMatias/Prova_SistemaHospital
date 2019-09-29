@@ -12,14 +12,18 @@ public class FuncionarioDAO {
 	static {
 		try {
 			// Secretarias
-			FUNCIONARIOS.add(new Funcionario("JoseLogin", "123abc", "Jose", "Secretaria", "", ""));
-			FUNCIONARIOS.add(new Funcionario("MartaLogin", "123abc", "Marta", "Secretaria", "", ""));
+			FUNCIONARIOS.add(new Funcionario("Jose", "Jose", "123", "Secretaria", "", ""));
+			FUNCIONARIOS.add(new Funcionario("Marta", "MartaLogin", "123", "Secretaria", "", ""));
 
 			// Medicos
-			FUNCIONARIOS.add(new Funcionario("BetoL" /* login */, "123"/* senha */, "Beto"/* nome */,
-					"Medico"/* função */, "Testson"/* paciente */, "30/09/2019 13:20"/* agenda */));
+			FUNCIONARIOS.add(new Funcionario("Beto" /* nome */, 
+												"BetoL"/* login */,
+														"123abc"/* senha */,
+															"Secretaria"/* função */, 
+																	"Testson"/* paciente */,
+																				"30/09/2019 13:20"/* agenda */));
 			FUNCIONARIOS
-					.add(new Funcionario("MariaLogin", "123abc", "Maria", "Medico", "Pedrinho", "30/09/2019 10:20"));
+					.add(new Funcionario("Maria", "MariaLogin", "123", "Medico", "Pedrinho", "30/09/2019 10:20"));
 			FUNCIONARIOS
 					.add(new Funcionario("PauloLogin", "123abc", "Paulo", "Medico", "Mariazinha", "29/09/2019 07:20"));
 
@@ -34,11 +38,13 @@ public class FuncionarioDAO {
 	}
 
 	public void cadastrarSecretaria(String login, String senha, String nome) {
+		System.out.println(login + senha + nome);
 		FUNCIONARIOS.add(new Funcionario(login, senha, nome, "Secretaria"));
 
 	}
 
 	public void cadastrarMedico(String login, String senha, String nome) {
+		System.out.println(login + senha + nome);
 		FUNCIONARIOS.add(new Funcionario(login, senha, nome, "Medico"));
 
 	}
@@ -98,16 +104,26 @@ public class FuncionarioDAO {
 		return agendamento;
 	}
 
+	
+	
 	public Funcionario verificarLogin(String login, String senha) {
 		Funcionario funcionario = null;
+		System.out.println(senha + login);
 		for (Funcionario f : FUNCIONARIOS) {
-			if (f.getLogin().equals(login) && f.getSenha().equals(senha)) {
+			System.out.println("Login enviado :"  + login + " Login foreach "  + f.getLogin());
+			System.out.println("Senha enviado :"  + senha + " Senha foreach "  + f.getSenha());
+			String logins = f.getLogin();
+			String senhas = f.getSenha();
+
+			if (logins.equals(login)  && senhas.equals(senha)) {
 				funcionario = f;
 				System.out.println("Login deu certo");
+				
+
 			}
 		}
 		if (funcionario == null) {
-			funcionario = new Funcionario("1", "1", "1", "Secretaria", "1", "1");
+			funcionario = new Funcionario("1", "1", "1", "1", "1", "1");
 		}
 		return funcionario;
 	}
