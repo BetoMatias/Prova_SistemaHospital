@@ -62,4 +62,21 @@ button {
   -moz-transition: all .3s ease-in-out;
   -webkit-ransition: all .3s ease-in-out;
 }
+.pacientesLista{
+
+  background-color:yellow;
+  justify-content: flex-start;
+  height: 300px;
+  width: 300px;
+  float:left;
+	
+}
+ .horarioLista{
+
+  background-color:silver;
+  justify-content:flex-end; ;
+  height: 300px;
+  width: 300px;
+  float:left;
+	
 

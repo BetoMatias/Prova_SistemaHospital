@@ -23,17 +23,19 @@ public class CadastroServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println(req.getParameter("tipoFunc"));
+		nome = req.getParameter("nome");
+		login = req.getParameter("login");
+		senha = req.getParameter("senha");
+		
 		if (req.getParameter("tipoFunc").contentEquals("Medico")) {
-			
-			nome = req.getParameter("nome");
-			login = req.getParameter("login");
-			senha = req.getParameter("senha");
 			
 			FUNCIONARIOS.cadastrarMedico(nome, login, senha);
 			System.out.println("Médico(a) adicionado(a).");
 		}
 		else if (req.getParameter("tipoFunc").equals("Secretaria")) {
-			FUNCIONARIOS.cadastrarSecretaria(login, senha, nome);
+			FUNCIONARIOS.cadastrarSecretaria(nome, login, senha);
+			
+			
 			System.out.println("Secretaria(o) adicionada(o).");
 		}
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);

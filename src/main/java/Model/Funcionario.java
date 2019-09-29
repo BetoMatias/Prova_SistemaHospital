@@ -1,13 +1,15 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Funcionario {
 	
 	private String login;
 	private String senha;
 	private String nome;
 	private String tipoFunc;
-	public String[] paciente;
-	public String[] horario;
+	public ArrayList<String> paciente = new ArrayList<String>();
+	public ArrayList<String> horario = new ArrayList<String>();
 	
 	public Funcionario(String nome, String login, String senha, String tipo) {
 		this.login = login;
@@ -21,6 +23,8 @@ public class Funcionario {
 		this.nome = nome;
 		this.senha = senha;
 		this.tipoFunc = tipo;
+		this.setPaciente(paciente);
+		this.setHorario(horario);
 
 		
 	}
@@ -31,24 +35,13 @@ public class Funcionario {
 	}
 	
 	public void setPaciente(String nome) {
-		for(int i=0; i<paciente.length-1; i++) {
-			this.paciente[i] = nome;
-		}
+		
+	paciente.add(nome);
 	}
 	
 	public void setHorario(String hora) {
-		for(int i=0; i<horario.length-1; i++) {
-			this.horario[i] = hora;
-		}
+		horario.add(hora);
 		
-	}
-	
-	public String getPaciente(int index) {
-		return this.paciente[index];
-	}
-	
-	public String getHorario(int index) {
-		return this.horario[index];
 	}
 	
 	public String getLogin() {

@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import Model.FuncionarioDAO;
 
@@ -17,6 +18,9 @@ public class AgendamentoServlet extends HttpServlet{
 		FuncionarioDAO FUNCIONARIOS = new FuncionarioDAO();
 
 		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	    HttpSession session = req.getSession();
+	    if(session.getAttribute("secretaria")!=null) {
 			
 		String medico = req.getParameter("medico");
 		String paciente = req.getParameter("paciente");
@@ -24,7 +28,8 @@ public class AgendamentoServlet extends HttpServlet{
 		
 		FUNCIONARIOS.agendarConsulta(medico, paciente, horario);
 		resp.sendRedirect("loginSecretaria.jsp");
-
+	    }else {
+	    	resp.sendRedirect("index.jsp");}
 		}
 	}
 
