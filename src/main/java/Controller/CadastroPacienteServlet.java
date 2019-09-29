@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import Model.FuncionarioDAO;
 
-@WebServlet(urlPatterns = { "/cadastrarPaciente" })
+@WebServlet(urlPatterns = { "/cadastroPaciente" })
 public class CadastroPacienteServlet extends HttpServlet{
 
 	private static final long serialVersionUID = -4855914994149928785L;
@@ -24,6 +24,6 @@ public class CadastroPacienteServlet extends HttpServlet{
 	
 	FUNCIONARIOS.cadastrarPaciente(nome, telefone, sintomas);
 	
-
+	resp.sendRedirect("loginSecretaria.jsp");
 	}
 }

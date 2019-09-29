@@ -52,6 +52,7 @@
 			</form>
 		</div>
 	</section>	
-</section>	
+</section>
+<a href=index.jsp>Voltar</a>	
 </body>
 </html>

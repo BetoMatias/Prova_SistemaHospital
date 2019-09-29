@@ -20,10 +20,10 @@ public class AgendamentoServlet extends HttpServlet{
 			
 		String medico = req.getParameter("medico");
 		String paciente = req.getParameter("paciente");
-		String sintomas = req.getParameter("sintomas");
+		String horario = req.getParameter("agenda");
 		
-		FUNCIONARIOS.cadastrarPaciente(medico, paciente, sintomas);
-		
+		FUNCIONARIOS.agendarConsulta(medico, paciente, horario);
+		resp.sendRedirect("loginSecretaria.jsp");
 
 		}
 	}
