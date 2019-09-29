@@ -15,7 +15,7 @@
 <body>
 	<h1>${paciente.nome}</h1><br>
 	<label>Sintomas: ${paciente.sintomas}</label><br>
-	<form class="prontuarioCss" action="atualizarProntuario">
+	<form class="prontuarioCss" action="atualizarProntuario" method="post">
 	<input type="hidden" name="paciente" value="${paciente.nome }"/> 
 	<label>Prontuario: </br> <textarea name="prontuario" rows="10" cols="60"> ${paciente.prontuario}</textarea>
 	</label>

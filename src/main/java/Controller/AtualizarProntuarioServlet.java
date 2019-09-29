@@ -27,6 +27,6 @@ public class AtualizarProntuarioServlet extends HttpServlet {
 		
 		paciente.setProntuario(prontuario);
 		
-		resp.sendRedirect("loginMedico.jsp");
+		resp.sendRedirect("/HospitalP1/login");
 	}	
 }

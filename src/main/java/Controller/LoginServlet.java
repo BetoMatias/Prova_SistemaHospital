@@ -23,11 +23,9 @@ public class LoginServlet extends HttpServlet {
 	FuncionarioDAO FUNCIONARIOS = new FuncionarioDAO();
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		FuncionarioDAO nDAO = new FuncionarioDAO();
 
 		HttpSession session = req.getSession();
-//		if (session.getAttribute("medico")!= null || session.getAttribute("secretaria")!= null) {
-//			session.invalidate();
-//		} 
 
 		login = req.getParameter("login");
 		senha = req.getParameter("senha");
@@ -36,12 +34,9 @@ public class LoginServlet extends HttpServlet {
 		if (funcio.getTipoFunc() == "Medico") {
 			session.setAttribute("medico", login);
 
-			FuncionarioDAO nDAO = new FuncionarioDAO();
-			
 			List<String> pacientes = nDAO.consultarPacientes(login);
 			List<String> horarios = nDAO.consultarHorarios(login);
-			
-			
+
 			req.setAttribute("pacientes", pacientes);
 			req.setAttribute("horarios", horarios);
 			req.setAttribute("medico", login);
@@ -52,6 +47,26 @@ public class LoginServlet extends HttpServlet {
 			req.getRequestDispatcher("loginSecretaria.jsp").forward(req, resp);
 		} else {
 			resp.sendRedirect("invalido.jsp");
+		}
+	}
+
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		FuncionarioDAO nDAO = new FuncionarioDAO();
+
+		HttpSession session = req.getSession();
+		if (session.getAttribute("medico") != null) {
+
+			List<String> pacientes = nDAO.consultarPacientes(login);
+			List<String> horarios = nDAO.consultarHorarios(login);
+			req.setAttribute("pacientes", pacientes);
+			req.setAttribute("horarios", horarios);
+			req.setAttribute("medico", login);
+			req.getRequestDispatcher("loginMedico.jsp").forward(req, resp);
+
+		} else if (session.getAttribute("secretaria") != null) {
+			req.getRequestDispatcher("loginSecretaria.jsp").forward(req, resp);
+		} else {
+			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		}
 	}
 }
