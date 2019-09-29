@@ -17,10 +17,11 @@ public class LoginServlet extends HttpServlet {
 
 	String login = "";
 	String senha = "";
+	FuncionarioDAO FUNCIONARIOS = new FuncionarioDAO();
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		FuncionarioDAO FUNCIONARIOS = new FuncionarioDAO();
+		
 		
 		login = req.getParameter("login");
 		senha = req.getParameter("senha");

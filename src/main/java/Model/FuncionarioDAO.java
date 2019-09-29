@@ -15,24 +15,20 @@ public class FuncionarioDAO {
 	static {
 		try {
 			// Secretarias
-			FUNCIONARIOS.add(new Funcionario("JoseLogin", "123abc", "Jose", "Secretaria",
-					new Agenda("", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("01/01/2019 00:00"))));
-			FUNCIONARIOS.add(new Funcionario("MartaLogin", "123abc", "Marta", "Secretaria",
-					new Agenda("", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("01/01/2019 00:00"))));
+			FUNCIONARIOS.add(new Funcionario("JoseLogin", "123abc", "Jose", "Secretaria","",""));
+			FUNCIONARIOS.add(new Funcionario("MartaLogin", "123abc", "Marta", "Secretaria","",""));
 
 			// Medicos
-			FUNCIONARIOS.add(new Funcionario("Beto", "123", "Beto", "Medico",
-					new Agenda("Testson", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("30/09/2019 13:20"))));
-			FUNCIONARIOS.add(new Funcionario("MariaLogin", "123abc", "Maria", "Medico",
-					new Agenda("Pedrinho", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("30/09/2019 10:20"))));
-			FUNCIONARIOS.add(new Funcionario("PauloLogin", "123abc", "Paulo", "Medico",
-					new Agenda("Mariazinha", new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("29/09/2019 07:20"))));
+			FUNCIONARIOS.add(new Funcionario("BetoL" /*login*/, "123"/*senha*/, "Beto"/*nome*/, "Medico"/*função*/,
+												"Testson"/*paciente*/,"30/09/2019 13:20"/*agenda*/));
+			FUNCIONARIOS.add(new Funcionario("MariaLogin", "123abc", "Maria", "Medico","Pedrinho","30/09/2019 10:20"));
+			FUNCIONARIOS.add(new Funcionario("PauloLogin", "123abc", "Paulo", "Medico","Mariazinha","29/09/2019 07:20"));
 
 			// Pacientes
-			PACIENTES.add(new Paciente("Pedrinho", "Dor de cabeça"));
-			PACIENTES.add(new Paciente("Mariazinha", "Braço com formigamento"));
+			PACIENTES.add(new Paciente("Pedrinho" /*nome*/,"1234-1234"/*telefone*/,"Dor de cabeça"/*Sintoma*/, ""/*Prontuario*/));
+			PACIENTES.add(new Paciente("Mariazinha","1234-4321","Braço com formigamento", ""));
 
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -47,8 +43,8 @@ public class FuncionarioDAO {
 
 	}
 
-	public void cadastrarPaciente(String nome, String sintomas) {
-		PACIENTES.add(new Paciente(nome, sintomas));
+	public void cadastrarPaciente(String nome,String telefone, String sintomas) {
+		PACIENTES.add(new Paciente(nome, telefone, sintomas, ""));
 
 	}
 
@@ -56,28 +52,64 @@ public class FuncionarioDAO {
 
 	}
 
-	public void agendarConsulta(String medico, Date horario) {
+	public void agendarConsulta(String medico, String paciente, String horario) {
+		
+		for (Funcionario f : FUNCIONARIOS)
+			if (f.getNome() == medico) {
+				f.setPaciente(paciente);
+				f.setHorario(horario);
+				
+				
+			}
 
 	}
 
-	public Agenda consultarAgenda(String nomeMedico) {
+	public String[] consultarPacientes(String nomeMedico) {
 
-		Agenda agenda = null;
+		String[] agendamento = new String[100];
 
 		for (Funcionario f : FUNCIONARIOS)
 			if (f.getNome() == nomeMedico) {
-				return agenda = f.getAgenda();
+				
+				for(int i = 0; i< f.paciente.length-1;i++) {
+					if(f.getPaciente(i)==null) {
+						agendamento[i] = "Agenda vazia.";
+					} else {
+						agendamento[i] = f.getPaciente(i);					
+				}
+				}	
 			}
-		return agenda;
+		return agendamento;
 	}
+	public String[] consultarHorarios(String nomeMedico) {
+
+		String[] agendamento = new String[100];
+
+		for (Funcionario f : FUNCIONARIOS)
+			if (f.getNome() == nomeMedico) {
+				
+				for(int i = 0; i< f.paciente.length-1;i++) {
+					if(f.getPaciente(i)==null) {
+						agendamento[i] = "Agenda vazia.";
+					} else {
+						agendamento[i] = f.getHorario(i);					
+				}
+				}	
+			}
+		return agendamento;
+	}
+	
 
 	public Funcionario verificarLogin(String login, String senha) {
-		Funcionario funcionario = new Funcionario("", "", "", "", new Agenda(""));
-
+		Funcionario funcionario = null;
 		for (Funcionario f : FUNCIONARIOS) {
 			if (f.getLogin().equals(login) && f.getSenha().equals(senha)) {
 				funcionario = f;
+				System.out.println("Login deu certo");
 			}
+		}
+		if (funcionario == null) {
+			funcionario = new Funcionario("1", "1", "1", "Secretaria","1","1");
 		}
 		return funcionario;
 	}

@@ -8,6 +8,7 @@
 <title>Login Invalido</title>
 </head>
 <body>
-Login invalido.
+<h1>Login invalido.</h1>
+<a href=index.jsp>Voltar</a>
 </body>
 </html>

@@ -6,7 +6,8 @@ public class Funcionario {
 	private String senha;
 	private String nome;
 	private String tipoFunc;
-	private Agenda agenda;
+	public String[] paciente;
+	public String[] horario;
 	
 	public Funcionario(String nome, String login, String senha, String tipo) {
 		this.login = login;
@@ -15,17 +16,39 @@ public class Funcionario {
 		this.tipoFunc = tipo;
 	}
 	
-	public Funcionario(String nome, String login, String senha, String tipo, Agenda agenda) {
+	public Funcionario(String nome, String login, String senha, String tipo, String paciente, String horario ) {
 		this.login = login;
 		this.nome = nome;
 		this.senha = senha;
 		this.tipoFunc = tipo;
-		this.agenda = agenda;
+
+		
 	}
 	
 	public Funcionario(String login, String senha) {
 		this.login = login;
 		this.senha = senha;
+	}
+	
+	public void setPaciente(String nome) {
+		for(int i=0; i<paciente.length-1; i++) {
+			this.paciente[i] = nome;
+		}
+	}
+	
+	public void setHorario(String hora) {
+		for(int i=0; i<horario.length-1; i++) {
+			this.horario[i] = hora;
+		}
+		
+	}
+	
+	public String getPaciente(int index) {
+		return this.paciente[index];
+	}
+	
+	public String getHorario(int index) {
+		return this.horario[index];
 	}
 	
 	public String getLogin() {
@@ -58,14 +81,6 @@ public class Funcionario {
 	
 	public void setTipoFunc(String tipoFunc) {
 		this.tipoFunc = tipoFunc;
-	}
-
-	public Agenda getAgenda() {
-		return agenda;
-	}
-
-	public void setAgenda(Agenda agenda) {
-		this.agenda = agenda;
 	}
 		
 }

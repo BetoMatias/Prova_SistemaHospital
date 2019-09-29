@@ -35,10 +35,13 @@
 	</section>	
 		<section class="agenda">
 			<div class="formAgenda">	
-				<form class= "formPaciente" action="cadastroPaciente" method="post">
+				<form class= "formagenda" action="agendarPaciente" method="post">
 					<h1 class="title">Agendar Consulta</h1>
 						<label>Médico: <input type="text" name="medico"
 						placeholder="Informar Medico" required />
+						</label> 
+						<label>Paciente: <input type="text" name="paciente"
+						placeholder="Informar Paciente" required />
 						</label> 
 						<label>Data: <input class="agenda" type="datetime-local" name="agenda"
 					required />
