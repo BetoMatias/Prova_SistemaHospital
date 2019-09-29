@@ -5,9 +5,6 @@
 				Model.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +15,7 @@
 
 	<h1>Consultas agendadas para ${medico}</h1>
 	<section class="horarioLista">
-		<table style="border: 1px solid black">
+		<table class="tabelaAgenda" style="border: 1px solid black">
 			<thead>
 				<tr>
 					<th>Consultas</th>
@@ -29,14 +26,14 @@
 			<tbody>
 				<c:forEach var="horario" items="${horarios}">
 					<tr>
-						<td><c:out value="${horario}" /></td>
+						<td class="listaConsulta"><c:out value="${horario}" /></td>
 						<td class="prontuariocss"><a href=/HospitalP1/prontuarios?horario=<c:out value="${horario}"/>>Prontuario</a></td>
-						<td class="deletarcss"><a href=/deletar>Dar baixa.</a></td>
+						<td class="deletarcss"><a href=/HospitalP1/deletar>Dar baixa.</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</section>
-<a href=index.jsp>Voltar</a>	
 </body>
+<a href=index.jsp>Voltar</a>	
 </html>

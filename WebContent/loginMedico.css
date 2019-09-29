@@ -1,15 +1,50 @@
 body {
-  background-color: #cddbfc;
+  background-color: #ddecff ;
   font-family: Verdana;
   margin: 0;
   padding: 0;
 }
  .horarioLista{
+  align-items: center;
+  background-color:#a6acfd;
+  justify-content:center;
+  height: auto;
+  width: auto;
+  float:center;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #000;
+ }
+ 
+  .prontuariocss {
+  align-items: center;
+  background-color: #ddecff ;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #000;
+  display: flex;
+  flex-direction: column;
+  height: 30px;
+  justify-content: center;
+  width: auto;
+  margin-top: 7%;
+}
 
-  background-color:silver;
-  justify-content:flex-end; ;
-  height: 300px;
-  width: 300px;
-  float:left;
 	
+.listaConsulta{
+  height: auto;
+  width: auto;
+  font-weight: bolder;
+	
+}
 
+.tabelaAgenda{
+  align-items: center;
+  background-color: #79d7fb ;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #000;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  width: 900;
+  margin-top: 7%;
+}

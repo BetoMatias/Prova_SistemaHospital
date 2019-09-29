@@ -56,8 +56,14 @@ public class FuncionarioDAO {
 
 	}
 
-	public void alterarProntuario(String prontuario) {
-
+	public void removerConsulta(String loginMedico, String paciente) {
+		for (Funcionario f : FUNCIONARIOS)
+			if (f.getLogin().equals(loginMedico)) {
+				int i = f.paciente.indexOf(paciente);
+				f.paciente.remove(i);
+				f.horario.remove(i);
+			}
+		
 	}
 	
 

@@ -10,13 +10,14 @@
 <title>Login Secretaria</title>
 </head>
 <body>
-<h1 class="titulopagina">Bem vindo(a)</h1>
+<h1 class="titulopagina">Bem vindo(a)${secretaria}</h1>
 <section class="container">
+
 	<section class="paciente">
 		<div class="formCadPaciente">
 			<h1 class="title">Cadastrar Paciente</h1>
 			<form class= "formPaciente" action="cadastroPaciente" method="Post">
-
+					
 				<label>Nome: <input type="text" name="Nome"
 					placeholder="Informar nome" required />
 				</label> 
@@ -33,10 +34,12 @@
 			</form>
 		</div>
 	</section>	
+	
 		<section class="agenda">
 			<div class="formAgenda">	
-				<form class= "formagenda" action="agendarPaciente" method="post">
-					<h1 class="title">Agendar Consulta</h1>
+				<h1 class="title">Agendar Consulta</h1>
+					<form class= "formuAgenda" action="agendarPaciente" method="post">
+					
 						<label>Médico: <input type="text" name="medico"
 						placeholder="Informar Medico" required />
 						</label> 

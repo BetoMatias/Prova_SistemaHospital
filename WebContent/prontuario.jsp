@@ -9,17 +9,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="prontuario.css">
 <title>Prontuario do ${paciente.nome}</title>
 </head>
 <body>
-	<h1>${paciente.nome}</h1><br>
-	<label>Sintomas: ${paciente.sintomas}</label><br>
-	<form class="prontuarioCss" action="atualizarProntuario" method="post">
+	<h1 class="nome">${paciente.nome}</h1><br>
+	<label class="sintoma">Sintomas: ${paciente.sintomas}</label><br>
+	<form class="prontuario" action="atualizarProntuario" method="post">
 	<input type="hidden" name="paciente" value="${paciente.nome }"/> 
 	<label>Prontuario: </br> <textarea name="prontuario" rows="10" cols="60"> ${paciente.prontuario}</textarea>
 	</label>
-	<button>Enviar/Atualizar</button>
+	<button><br>Enviar/Atualizar<br></button>
 	</form>
 </body>
 </html>
