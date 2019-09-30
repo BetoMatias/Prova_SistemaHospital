@@ -11,7 +11,7 @@
 
 <section class="container">
 
-	<h1 class="title">Cadastro</h1>
+	<h1>Cadastro</h1>
 	<form class="cadastro" action="cadastrar" method="POST">
 
 		</label> <label>Login: <input type="text" name='login'
@@ -28,4 +28,5 @@
 	</form>
 </section>
 </body>
+<a href=index.jsp>Voltar</a>	
 </html>

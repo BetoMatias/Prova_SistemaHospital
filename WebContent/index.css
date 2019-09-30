@@ -6,6 +6,19 @@ body {
 }
 
 
+.login {
+  align-items: center;
+  background-color: #ddecff ;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px #000;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+  width: 300px;
+  margin-top: 5%;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -27,24 +40,10 @@ body {
   box-shadow: 2px 2px 10px #000;
   display: flex;
   flex-direction: column;
-  height: 300px;
-  justify-content: center;
-  width: 300px;
-  margin-top: 7%;
-}
-
-
-.login {
-  align-items: center;
-  background-color: #ddecff ;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px #000;
-  display: flex;
-  flex-direction: column;
   height: 200px;
   justify-content: center;
   width: 300px;
-  margin-top: 7%;
+  margin-top: 5%;
 }
 
 button {
@@ -61,21 +60,3 @@ button {
   -moz-transition: all .3s ease-in-out;
   -webkit-ransition: all .3s ease-in-out;
 }
-.pacientesLista{
-
-  background-color:yellow;
-  justify-content: flex-start;
-  height: 300px;
-  width: 300px;
-  float:left;
-	
-}
- .horarioLista{
-
-  background-color:silver;
-  justify-content:flex-end; ;
-  height: 300px;
-  width: 300px;
-  float:left;
- }
- 

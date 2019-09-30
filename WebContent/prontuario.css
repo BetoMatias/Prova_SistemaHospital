@@ -16,7 +16,7 @@ body {
   justify-content: center;
   width: 500px;
   margin-top: 7%;
-  margin-left:35%;
+  align-self: center;
 }
 
 .sintoma, .nome{

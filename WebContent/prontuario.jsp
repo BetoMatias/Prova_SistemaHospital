@@ -11,6 +11,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="prontuario.css">
 <title>Prontuario do ${paciente.nome}</title>
+<a href=/HospitalP1/logout>Deslogar</a>	
 </head>
 <body>
 	<h1 class="nome">${paciente.nome}</h1><br>
@@ -22,5 +23,5 @@
 	<button><br>Enviar/Atualizar<br></button>
 	</form>
 </body>
-<a href=/HospitalP1/logout>Deslogar</a>	
+<a href=index.jsp>Voltar</a>	
 </html>
