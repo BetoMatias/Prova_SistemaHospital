@@ -16,7 +16,8 @@ body {
   justify-content: center;
   width: 500px;
   margin-top: 7%;
-  align-self: center;
+  margin-left: 35%;
+  margin-right: 35%;
 }
 
 .sintoma, .nome{
@@ -44,4 +45,24 @@ button {
   transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -webkit-ransition: all .3s ease-in-out;
+}
+a{
+  background-color:#ccffff ;
+  box-shadow: 0 2px 0 darkblue;
+  border-radius:8px;
+  color: black;
+  padding: 0.5 1em;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover{
+  background-color: #6fb7ff;
+  cursor: pointer;
+}
+
+a:active{
+  box-shadow: none;
+  top: 3px;
 }

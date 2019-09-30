@@ -15,13 +15,14 @@
 
 	<h1>Consultas agendadas para ${medico}</h1>
 	<a href=/HospitalP1/logout>Deslogar</a>	
+	<a href=/HospitalP1/listaPacientes>Pacientes</a>
 	<section class="horarioLista">
 		<table class="tabelaAgenda" style="border: 1px solid black">
 			<thead>
 				<tr>
-					<th>Consultas</th>
-					<th>Prontuarios</th>
-					<th>Remover</th>
+					<th>Consultas  </th>
+					<th>Prontuarios  </th>
+					<th>Remover  </th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,5 +37,5 @@
 		</table>
 	</section>
 </body>
-<a href=index.jsp>Voltar</a>	
+<a href=index.jsp>Voltar ao inicio</a>	
 </html>

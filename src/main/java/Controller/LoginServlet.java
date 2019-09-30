@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import Model.Funcionario;
 import Model.FuncionarioDAO;
+import Model.Paciente;
 
 @WebServlet(urlPatterns = { "/login" })
 public class LoginServlet extends HttpServlet {
@@ -36,7 +37,9 @@ public class LoginServlet extends HttpServlet {
 
 			List<String> pacientes = nDAO.consultarPacientes(login);
 			List<String> horarios = nDAO.consultarHorarios(login);
+			List<Paciente> pacienteLista = nDAO.PACIENTES;
 
+			req.setAttribute("listaP", pacienteLista);
 			req.setAttribute("pacientes", pacientes);
 			req.setAttribute("horarios", horarios);
 			req.setAttribute("medico", login);
@@ -56,8 +59,14 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = req.getSession();
 		if (session.getAttribute("medico") != null) {
 
+			List<Paciente> pacienteLista = nDAO.PACIENTES;
+
+
+			
 			List<String> pacientes = nDAO.consultarPacientes(login);
 			List<String> horarios = nDAO.consultarHorarios(login);
+			
+			req.setAttribute("listaP", pacienteLista);
 			req.setAttribute("pacientes", pacientes);
 			req.setAttribute("horarios", horarios);
 			req.setAttribute("medico", login);

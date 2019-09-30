@@ -22,8 +22,8 @@
 					placeholder="Informe sua senha" required />
 				</label>
 
-				<button>Entrar</button>
-
+				<button>Entrar</button><br>
+			
 				<a href=cadastro.jsp>Cadastrar</a>
 
 			</form>

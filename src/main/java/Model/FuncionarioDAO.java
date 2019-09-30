@@ -7,7 +7,7 @@ public class FuncionarioDAO {
 
 	private static List<Funcionario> FUNCIONARIOS = new ArrayList<Funcionario>();
 
-	private static List<Paciente> PACIENTES = new ArrayList<Paciente>();
+	public static List<Paciente> PACIENTES = new ArrayList<Paciente>();
 
 	static {
 		try {
