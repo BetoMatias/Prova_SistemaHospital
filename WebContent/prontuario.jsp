@@ -23,5 +23,5 @@
 	<button><br>Enviar/Atualizar<br></button>
 	</form>
 </body>
-<a href=/login>Voltar</a>	
+<a href=index.jsp>Voltar ao inicio</a>	
 </html>

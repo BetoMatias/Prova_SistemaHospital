@@ -55,6 +55,6 @@
 		</div>
 	</section>	
 </section>
-<a href=index.jsp>Voltar</a>	
+<a href=index.jsp>Voltar ao inicio</a>	
 </body>
 </html>
